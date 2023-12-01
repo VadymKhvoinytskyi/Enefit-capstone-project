@@ -8,7 +8,16 @@
 ## Open questions
 1. Why has datablock 1 no corresponding client? (there were assumptions, but not solved)
 
-## 30.11.23 - next
+## NEXT 1.12.23 
+### Plan for today
+* Continue working on merge
+* Firgure out, why our merge of train and client on datablock_id generates empty Nat values in date and how this is a problem
+
+## 30.11.23
+### Plan for today
+Merge data (in group) - and/or quick EDA on individual tables (subgroups/individual)?
+
+* Data Block ID 0 abd 1 have no corresponding entries in train
 
 ## 29.11.23 - Getting to know the data structure
 * Mainly discussed when data is gathered for prediction and how the relate to each other
