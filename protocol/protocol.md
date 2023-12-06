@@ -5,13 +5,67 @@
 * [Kanban Board](https://github.com/users/VadymKhvoinytskyi/projects/1/views/1)
 * [Milestones](https://github.com/VadymKhvoinytskyi/Enefit-capstone-project/milestones?with_issues=no)
 
-## Open questions
-1. Why has datablock 1 no corresponding client? (there were assumptions, but not solved)
+## Report to Coaches
+## 8.12.23
+* Q: How relevant are time series for our case?
+* * Ask coaches for time series recording
 
-## NEXT 1.12.23 
+## NEXT 7.12.
+### Plan for today
+* Clean roadmap and prepare reporting for Friday to coaches
+* Gather charts from yesterday (via Slack if not working otherwise)
+* MAIN TOPICS
+  * First hypotheses prepared individually
+  * Decide:
+    * further EDA based on hypotheses neded?
+    * OR: feature engineering
+  * First model
+* Gather topics to bring forward to coaches
+  
+### Notes from today
+
+## 6.12.23 
+### Plan for today
+* Continue looking at gaps in data
+* Brainstorm and implement (basic) feature engineering
+* Continue on visualisation where needed to ...
+* ... Start EDA and write down GOALS first ('research questions) -> baseline model'
+
+### Notes from today
+* We did some individual plots, nothing unexpected emerged apart from a few "anomylities" (e.g. energy consumption rose for the second year - see notebook)
+* Unclear what next step would be and if we work as group or individualls
+* Discussed: Can we exclude the non-businesses from data to more easily analyse trend (idea: smaller producers have less capacity, not influencing as much)? Conclusion controverse: So many are non-business... Maybe coming back to it later. Additional thought: How much is the _capacity_ linfluencing the _target_.
+
+
+## 4./5.23
+lectures on Agile and Time Series
+
+### Analysing data gaps
+* At least county ID 12 seems to be problematic
+* datablock IDs 0, 1 were problemeatic
+* First visualisations -> assumption: businesses (is_business == 1) produce more energy
+
+
+## 1.12.23 
 ### Plan for today
 * Continue working on merge
-* Firgure out, why our merge of train and client on datablock_id generates empty Nat values in date and how this is a problem
+### Notes from today
+* Please refer to EDA notebook comments, they show each step what has been done:)
+- Merging: train data with everything else
+
+- Merging electricity & gas prices:
+    - On date time, data_block_id
+    - But prices are hourly prices, so we split date time to hours first
+
+- Merging historical & forecast weather data
+    - merge counties first
+    - Aggregate duplicate locations
+    - Time of day switch
+
+- Correcting the timezone of forecast_time (from UTC to EET)
+- Organising comments and notes in the notebook
+- Plans for Monday: further brainstorm on feature engineering and start with data cleaning & EDA
+* 
 
 ## 30.11.23
 ### Plan for today
@@ -28,3 +82,4 @@ Merge data (in group) - and/or quick EDA on individual tables (subgroups/individ
 <img src="./resources/enefit_data_chart.png">
 <img src="./resources/Enefit_train_data_mindmap.png">
 <img src="./resources/data_avail.png">
+<img src="./resources/all-columns-overview.png">
