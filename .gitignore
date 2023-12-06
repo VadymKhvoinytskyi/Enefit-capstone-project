@@ -6,6 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+# my exceptions
+*.csv
+/predict-energy-behavior-of-prosumers
+
+ 
 # Distribution / packaging
 .Python
 build/
