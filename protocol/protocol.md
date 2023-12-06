@@ -35,6 +35,7 @@
 * We did some individual plots, nothing unexpected emerged apart from a few "anomylities" (e.g. energy consumption rose for the second year - see notebook)
 * Unclear what next step would be and if we work as group or individualls
 * Discussed: Can we exclude the non-businesses from data to more easily analyse trend (idea: smaller producers have less capacity, not influencing as much)? Conclusion controverse: So many are non-business... Maybe coming back to it later. Additional thought: How much is the _capacity_ linfluencing the _target_.
+* EDA notebook cleaned up
 
 
 ## 4./5.23
