@@ -1,23 +1,31 @@
-# Protocol Capstone Enefit
+# Capstone Enefit
 ## Basic info
-
 * [Project](https://www.kaggle.com/competitions/predict-energy-behavior-of-prosumers/overview)
 * [Kanban Board](https://github.com/users/VadymKhvoinytskyi/projects/1/views/1)
 * [Milestones](https://github.com/VadymKhvoinytskyi/Enefit-capstone-project/milestones?with_issues=no)
 
-## Report to Coaches
+# Reports to Coaches
 ## 8.12.23
 * Q: How relevant are time series for our case?
 * * Ask coaches for time series recording
 
-## NEXT 7.12.
+# Logbook
+## 7.12.
 ### Plan for today
+* Edit 
+  * Individual thinking + Hypothesis
+* Vanessa Plan about baseline model (what to do).
+  * Forums: not a lot on time series (consumption amount can be seen as time series)
+  * Prediction rather not a time series
+  * [Statsistics on Estonia](https://tamm.stat.ee/?lang=en)
+* Sarah
+  * Hypothesis in the group or sub groups
 * Clean roadmap and prepare reporting for Friday to coaches
 * Gather charts from yesterday (via Slack if not working otherwise)
 * MAIN TOPICS
-  * First hypotheses prepared individually
+  * First hypotheses prepared? If not: Split individually or as group
   * Decide:
-    * further EDA based on hypotheses neded?
+    * further EDA based on hypotheses needed?
     * OR: feature engineering
   * First model
 * Gather topics to bring forward to coaches
