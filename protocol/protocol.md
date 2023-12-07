@@ -6,7 +6,11 @@
 
 # Reports to Coaches
 ## 8.12.23
-* Q: How relevant are time series for our case?
+* We have to create a prediction model of prosumers to reduce energy imbalance costs
+* Submission:
+  * test: county,is_business,product_type,is_consumption,prediction_datetime,data_block_id,row_id,prediction_unit_id,currently_scored
+  * prediction: row_id,data_block_id,target
+* * Q: How relevant are time series for our case?
 * * Ask coaches for time series recording
 
 # Logbook
