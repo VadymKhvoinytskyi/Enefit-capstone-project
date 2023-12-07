@@ -10,8 +10,8 @@
 * Submission:
   * test: county,is_business,product_type,is_consumption,prediction_datetime,data_block_id,row_id,prediction_unit_id,currently_scored
   * prediction: row_id,data_block_id,target
-* * Q: How relevant are time series for our case?
-* * Ask coaches for time series recording
+* Q: How relevant are time series for our case?
+* Ask coaches for time series recording
 
 # Logbook
 ## 7.12.
@@ -35,6 +35,9 @@
 * Gather topics to bring forward to coaches
   
 ### Notes from today
+* Put graphs from the group contribution to the notebook
+* Cleaned notebook
+* First baseline model (new dataframe wihch dates back data 365 days)
 
 ## 6.12.23 
 ### Plan for today
