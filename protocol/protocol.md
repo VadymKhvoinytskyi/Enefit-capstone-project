@@ -14,6 +14,29 @@
 * Ask coaches for time series recording
 
 # Logbook
+
+## NEXT 11.12.23
+### Plan for today / the week
+* visualisation
+* split by date
+* tweaking the parameters
+* drop some features
+* feature engineering
+* overfitting with traditional train_test_split?
+* try to models/ multiple_output/ other models
+
+### Notes from today
+
+## 8.12.
+### Plan for today
+* Finish baseline model and incoporate contribution from team into notebook
+* Work on first "real" model
+
+
+### Notes from today
+* Consumption can be well described by our baseline model
+* Production cannot not be so well described by baseline model
+
 ## 7.12.
 ### Plan for today
 * Edit 
