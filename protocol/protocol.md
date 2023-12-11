@@ -15,6 +15,36 @@
 
 # Logbook
 
+## 11.12.
+### Plan for today
+- Edit:
+  - continue working on the model
+  - checking model parameters and try out different values
+- Claude: 
+    - there is an error in a plot, lets correct
+    - Cleanup notebook
+    - Why do we have good results?
+    - Test vs train results should be equal, it seems to be an overfit
+- Vanessa:
+    - Why the modell fitting so well on train data
+- Sarah:
+    - Same
+    - Train-test split change caused lots of changes
+    - Split up tasks, work individually
+- Vadim:
+    - Continue on the model
+    - Eliminate features
+    - Model tweaking and changing parameters
+    - Feature engineering
+
+### Notes from today
+- checking residuals
+- remove unnecessary features
+- trend effect removal?
+- normalization?
+- model tweaking
+
+
 ## NEXT 11.12.23
 ### Plan for today / the week
 * visualisation
