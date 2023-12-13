@@ -16,12 +16,40 @@
 # Logbook
 
 
+## 13.12.
+### Notes from today
+
+Null values:
+- null values? are they affecting our model? Vanessa checked some modifications: slight differences
+- options to fill these values? with other counties results? aggregation by block ID and hour?
+- let's agree on how to handle them
+
+Parameters tuning:
+- similar results with grid search parameters when production/consumption is split into 2 and when not
+- multi-output models?
+- oversampling 2023? 
+
+To do tomorrow:
+- writing functions: to merge, to model
+- checking our model on test data and then see results
+
+Open questions (Vanessa):
+- can XGBoost handle NaN values? Do we have to handle them before modelling?
+-> by defaulf, XGBoost can handle nan values (but for linear model)
+
+- what parameters can we tune? (see Modelling notebook)
+https://xgboost.readthedocs.io/en/stable/parameter.html
+
+- what other features can/should we remove?
+    - i think none
+
 ## 12.12.
 ### Plan for today
   - residuals further checking
   - continue from yesterday
   - trend about high capacity
   - feature importance
+
 
 ### Notes from today
 - investigating residuals' trends

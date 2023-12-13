@@ -142,3 +142,6 @@ models/*
 
 #config file has sensitive data
 .mlflow_uri
+
+# parquet merged file
+data/merged_df.parquet
