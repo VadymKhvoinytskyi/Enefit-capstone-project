@@ -149,3 +149,5 @@ data/merged_df.parquet
 #Edit's notebook:
 notebooks/EDA_Edit.ipynb
 notebooks/Modelling copy.ipynb
+..bfg-report/
+Enefit-capstone-project.git/
