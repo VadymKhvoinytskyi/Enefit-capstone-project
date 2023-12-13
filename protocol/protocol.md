@@ -15,6 +15,31 @@
 
 # Logbook
 
+
+## 12.12.
+### Plan for today
+  - residuals further checking
+  - continue from yesterday
+  - trend about high capacity
+  - feature importance
+
+### Notes from today
+- investigating residuals' trends
+- splitting EDA, Merging and Modeling notebooks
+- merged csv will be saved on harddrive 
+- normalization: not needed because of xpgboost includes
+- we started checking feature importances, and removing features
+- dummies are not needed, xgboost can handle them. But we need to set them to categorical variables.
+- feature engineering:
+  - workday vs weekend
+  - holidays
+  - increasing in the capacity
+  - weather aggregation for previous/future period
+  - prices aggregation for previous period
+
+
+- 
+
 ## 11.12.
 ### Plan for today
 - Edit:
