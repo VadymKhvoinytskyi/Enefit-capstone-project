@@ -55,13 +55,13 @@ To do tomorrow:
 
 Open questions (Vanessa):
 - can XGBoost handle NaN values? Do we have to handle them before modelling?
--> by defaulf, XGBoost can handle nan values (but for linear model)
+-> by defaulf, XGBoost can handle null values (but for linear model)
 
 - what parameters can we tune? (see Modelling notebook)
 https://xgboost.readthedocs.io/en/stable/parameter.html
 
 - what other features can/should we remove?
-    - i think none
+    - none?
 
 ## 12.12.
 ### Plan for today
