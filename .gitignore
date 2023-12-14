@@ -8,8 +8,7 @@ __pycache__/
 
 # my exceptions
 *.csv
-/predict-energy-behavior-of-prosumers
-notebooks/
+
 
  
 # Distribution / packaging
@@ -142,3 +141,13 @@ models/*
 
 #config file has sensitive data
 .mlflow_uri
+
+# parquet merged file
+data/merged_df.parquet
+
+
+#Edit's notebook:
+notebooks/EDA_Edit.ipynb
+notebooks/Modelling.ipynb
+..bfg-report/
+Enefit-capstone-project.git/
