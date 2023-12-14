@@ -66,8 +66,6 @@ https://xgboost.readthedocs.io/en/stable/parameter.html
   - prices aggregation for previous period
 
 
-- 
-
 ## 11.12.
 ### Plan for today
 - Edit:
