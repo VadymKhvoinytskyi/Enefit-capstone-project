@@ -15,6 +15,26 @@
 
 # Logbook
 
+## 14.12.
+### Notes from today
+
+- Tweaked model parameters again
+- “Pickled” the best model
+- Further development:
+    - drop columns
+    - Bring train-test MAE closer to each other
+- Modelling test notebook was added (Trying out our model on “real” test csv):
+    - First merging
+    - Data preparation
+    - The running the model
+- API exploration
+
+Ask the coaches:
+- Holidays: Already starts on the 20st? double check if we meet for screenshot or not
+- Midterm presentation: is it google slides? Or just notebooks leading through
+- Timeseries: general opinion on the model from Nico
+- Is it possible we have good result XGBoost but it’s too good, we should switch to timeseries?
+- Null values
 
 ## 13.12.
 ### Notes from today
@@ -35,13 +55,13 @@ To do tomorrow:
 
 Open questions (Vanessa):
 - can XGBoost handle NaN values? Do we have to handle them before modelling?
--> by defaulf, XGBoost can handle nan values (but for linear model)
+-> by defaulf, XGBoost can handle null values (but for linear model)
 
 - what parameters can we tune? (see Modelling notebook)
 https://xgboost.readthedocs.io/en/stable/parameter.html
 
 - what other features can/should we remove?
-    - i think none
+    - none?
 
 ## 12.12.
 ### Plan for today
