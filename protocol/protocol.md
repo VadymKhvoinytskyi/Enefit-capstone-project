@@ -1,10 +1,15 @@
 # Capstone Enefit
+
+Project goal: to address the challenge of energy imbalance caused by prosumers – people/businesses that both consume and produce energy. This growing issue, characterized by discrepancies between expected and actual energy usage, leads to operational inefficiencies and increased costs. Overall gaol is to create predictive models to forecast prosumer energy behavior more accurately, thereby reducing energy imbalance costs. Evaluation: based on the Mean Absolute Error (MAE) between predicted and observed energy usage.
+
 ## Basic info
 * [Project](https://www.kaggle.com/competitions/predict-energy-behavior-of-prosumers/overview)
 * [Kanban Board](https://github.com/users/VadymKhvoinytskyi/projects/1/views/1)
 * [Milestones](https://github.com/VadymKhvoinytskyi/Enefit-capstone-project/milestones?with_issues=no)
+* [Miro board for PM](https://miro.com/app/board/uXjVNCFpaMQ=/?share_link_id=243727788060)
 
-# Reports to Coaches
+# Reports to Coaches / PM meetings
+(updated weekly on Fridays)
 ## 8.12.23
 * We have to create a prediction model of prosumers to reduce energy imbalance costs
 * Submission:
@@ -13,7 +18,46 @@
 * Q: How relevant are time series for our case?
 * Ask coaches for time series recording
 
+## 15.12.23
+* Important to update [Miro board](https://miro.com/app/board/uXjVNCFpaMQ=/?share_link_id=243727788060) for the next meeting
+
+### General advice for PM meetings:
+- Project recap: MVP, goal, one-two sentence
+- Focus on issues, resource issues: Are we keeping the progress, do we need support or help?
+- Anything that affects other departments or stakeholders?
+- Communicate: Inform others about changes or the need of new resources
+
+### General notes about the project:
+
+- XGboost is very good for also for time series
+- Features should contain information about the past, and not about the future or the present
+- is there any data leakage? Something that is closely related to the target?
+- advice: Submission to try out to see our actually effectiveness
+- Miro board for PM overview (we can make up the story, no need to follow strictly the kaggle description)
+
+Tips from Nico:
+- Try include more past data
+- Try remove trend+seasonality first- And do the model on what’s left
+- But after prediction we need to add them back
+- Several models to try? One after each other
+- Null values: drop the whole feature? Imputing might be questionable?
+- Try model with and without county? Or just drop that county? How much is the model affected? all depends on our goal
+
+
 # Logbook
+(updated daily)
+## 15.12.
+### Plan/notes today
+- Recap
+- Submission to try out: To see where our MVP stands
+- Submission how? Discussion and trying out
+- Presentation structure to prep 
+- Notebook structure and cleanup so we can upload it to kaggle: have one notebook that we can upload, or separate merging and modelling (tbd)
+
+- 2 main goals for next week (considering that we'll have only 2 working days):
+  - presentation structure
+  - notebook cleanups and restructure
+
 
 ## 14.12.
 ### Notes from today
