@@ -46,6 +46,25 @@ Tips from Nico:
 
 # Logbook
 (updated daily)
+
+## 18.12. 
+Plan for last two days before Christmas: 
+- Clean up notebooks
+- put all in one submission notebook
+- upload to kaggle
+- make submission
+- make some notes / structure for the slides  
+
+
+#### What we did today:
+- created a new notebook 'Submission-Notebook'
+- uploaded the notebook to kaggle
+- got the API working
+- made a submission: score ~ MAE 400
+- really bad score - detected some errors in the test data merging
+- some changes - **data_block_id is not in the test data**
+- **we have a scoring error on kaggle and cant figure out why**
+
 ## 15.12.
 ### Plan/notes today
 - Recap
