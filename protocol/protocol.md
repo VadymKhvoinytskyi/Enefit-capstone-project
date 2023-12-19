@@ -47,6 +47,28 @@ Tips from Nico:
 # Logbook
 (updated daily)
 
+## 19.12.
+
+#### What we did today:
+- copied the first working notebook on kaggle and added some changes in the prep_data() function
+
+**Submission completed!  
+Score:  MAE  150.47**   
+Rated at position 935
+
+- possible issue: calling a specific value in provided DataFrame (gas_prices), because we don't know how the DataFrame looks like in every iteration
+
+
+**To-Do's after Christmas break:**
+- project vision board 
+- cleaning notebooks 
+- gather insights and plots for the presentation
+- drop some features
+- feature engineering
+- null values
+- look at the parameters: different estimators
+- try different models
+
 ## 18.12. 
 Plan for last two days before Christmas: 
 - Clean up notebooks
