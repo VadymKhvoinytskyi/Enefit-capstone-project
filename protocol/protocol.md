@@ -47,6 +47,16 @@ Tips from Nico:
 # Logbook
 (updated daily)
 
+## 04.01. and 05.01.
+
+#### What we did:
+- worked on the [slides](https://docs.google.com/presentation/d/1lseaW-3bBfs6DvtqZn4fAFrTRId0h_we19CEx6IZoNw/edit#slide=id.g1ed793e4c35_0_997) for the midterm-presentation on Tuesday
+- everybody added some plots
+- had some final thoughts on improvements
+- everybody implements improvements in their plots
+- make the slides complete and pretty
+
+
 ## 19.12.
 
 #### What we did today:
