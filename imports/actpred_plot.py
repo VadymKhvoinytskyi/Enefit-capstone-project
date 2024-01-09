@@ -59,6 +59,12 @@ def plot_actual_vs_pred(plotdat, observed='observed', predicted='target', title=
     plt.annotate('2023', xy=(jan_2023 + pd.Timedelta(days=0), 100), xytext=(60, 0), textcoords='offset points',
                 arrowprops=dict(facecolor='black', arrowstyle="<-"), color='black', horizontalalignment='left', verticalalignment='center')
 
+    # Set every nth lable on x-axes
+    ax = plt.gca()
+    temp = ax.xaxis.get_ticklabels()
+    temp = list(set(temp) - set(temp[::7]))
+    for label in temp:
+        label.set_visible(False)
 
     # Show the plot
     plt.tight_layout()  # Adjust the layout to fit all elements
