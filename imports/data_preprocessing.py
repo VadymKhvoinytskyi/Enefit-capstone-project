@@ -59,9 +59,7 @@ def merge_data(data, client, historical_weather,
     #### Data Merging 
 
     ### Merge Client
-    merge_on = ['county', 'is_business', 'product_type']
-    for i in merge_parameter:
-        merge_on.append(i)   
+    merge_on = ['county', 'is_business', 'product_type'] + merge_parameter
     merged_df = pd.merge(data, client, on=merge_on, how='left')
 
     ### Merge Gas Prices
@@ -79,9 +77,7 @@ def merge_data(data, client, historical_weather,
     electricity_prices['time_of_day'] = electricity_prices.forecast_date_electricity_prices.dt.time
 
     ### Merge Electricity Prices
-    merge_on = ['time_of_day']
-    for i in merge_parameter:
-        merge_on.append(i)   
+    merge_on = ['time_of_day'] + merge_parameter
     # merge electricity_prices
     merged_df = pd.merge(merged_df, electricity_prices, on = merge_on, how='left')
 
@@ -93,18 +89,14 @@ def merge_data(data, client, historical_weather,
     merged_hist_weather['time_of_day'] = merged_hist_weather['datetime'].dt.time
 
     # aggregate by county and time (summarize weather stations for same county)
-    group_by = ['county', 'time_of_day', 'datetime']
-    for i in merge_parameter:
-        group_by.append(i) 
+    group_by = ['county', 'time_of_day', 'datetime'] + merge_parameter
     merged_hist_weather = merged_hist_weather.groupby(group_by).mean(numeric_only=True).reset_index()
 
     # append _hist_weather to column names
     merged_hist_weather.columns = [f"{column}_hist_weather" if column not in ['county', 'time_of_day','data_block_id'] else column for column in merged_hist_weather.columns]
 
     # merge to merged_df
-    merge_on = ['time_of_day', 'county']
-    for i in merge_parameter:
-        merge_on.append(i) 
+    merge_on = ['time_of_day', 'county'] + merge_parameter
     merged_df = pd.merge(merged_df, merged_hist_weather, on=merge_on, how='left')
 
     ### Merge Forecast Weather
@@ -118,21 +110,15 @@ def merge_data(data, client, historical_weather,
     # merged_forecast_weather['time_of_day'] = merged_forecast_weather.
 
     # # aggregate for duplicate locations
-    group_by = ['county', 'forecast_datetime']
-    for i in merge_parameter:
-        group_by.append(i) 
+    group_by = ['county', 'forecast_datetime'] + merge_parameter
     merged_forecast_weather = merged_forecast_weather.groupby(group_by).mean(numeric_only=True).reset_index()
 
     # append forecast_weather to column names
     merged_forecast_weather.columns = [f"{column}_forecast_weather" if column not in ['county', 'forecast_datetime','data_block_id'] else column for column in merged_forecast_weather.columns]
 
     # merge forecast_weather
-    merge_on_left = ['datetime', 'county']
-    for i in merge_parameter:
-        merge_on_left.append(i)
-    merge_on_right = ['forecast_datetime', 'county']
-    for i in merge_parameter:
-        merge_on_right.append(i)
+    merge_on_left = ['datetime', 'county'] + merge_parameter
+    merge_on_right = ['forecast_datetime', 'county'] + merge_parameter
     merged_df = pd.merge(merged_df, merged_forecast_weather, left_on=merge_on_left, right_on=merge_on_right, how='left')
 
     # mapping days of the week names and converting to categorical variable
