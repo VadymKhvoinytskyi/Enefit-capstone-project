@@ -135,6 +135,10 @@ dmypy.json
 
 
 data/*.csv
+data/enefit/
+data/example_test_files/
+data/predict-energy-behavior-of-prosumers.zip
+data/.DS_Store
 models/*.sav
 mlruns
 models/*
@@ -151,3 +155,6 @@ notebooks/EDA_Edit.ipynb
 notebooks/Modelling.ipynb
 ..bfg-report/
 Enefit-capstone-project.git/
+
+#Sarahs notebooks
+Sarah/
