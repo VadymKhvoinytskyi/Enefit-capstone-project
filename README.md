@@ -5,8 +5,8 @@
 # Files
 | Name         | Description |
 |--------------|-----------|
-| notebooks/EDA.ipynb | Exploratory Data Analysis      |
+| notebooks/01_EDA.ipynb | Exploratory Data Analysis      |
 | optimization.ipynb (TBD) | Findings best parameters for model      |
-| notebooks/Modelling.ipynb  | Training model with optimized parameters  |
-| notebooks/modelling_test_data.ipynb  | Prediction on test data (currently runs locally) |
-| ~~notebooks/Submission-Notebook.ipynb~~  | ~~Prediction on test data (currently runs on kaggle)~~ |
+| notebooks/02_Modelling.ipynb  | Training model with optimized parameters  |
+| notebooks/03_modelling_test_data.ipynb  | Prediction on test data (currently runs locally) |
+| notebooks/V-1_first-working-submission-notebook.ipynb.ipynb  | Notebook used for submission (only runs on kaggle) |
