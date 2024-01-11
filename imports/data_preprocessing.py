@@ -121,7 +121,7 @@ def merge_data(data, client, historical_weather,
     merge_on_right = ['forecast_datetime', 'county'] + merge_parameter
     merged_df = pd.merge(merged_df, merged_forecast_weather, left_on=merge_on_left, right_on=merge_on_right, how='left')
 
-    # mapping days of the week names and converting to categorical variable
+    # mapping days of the week names and converting to categorical variable  ----- not working!!!!!???
     if 'day_of_week' in merged_df.columns:
         weekday_map = {
             0: 'Monday',
@@ -138,7 +138,34 @@ def merge_data(data, client, historical_weather,
     merged_df['county'] = merged_df['county'].astype('category')
     merged_df['product_type'] = merged_df['product_type'].astype('category')
 
+    # convert the time_of_day into int
+    #merged_df["time_of_day"] = merged_df["time_of_day"].apply(lambda x: int(x.strftime("%H")))
+
     # split datetime into meaningful features of int types
     merged_df = split_datetime(merged_df)
 
     return merged_df
+
+
+def remove_col(merged_df, col_list=[]):        
+    ### Drop Colums for modelling 
+    # # model is not able to handle datetime
+    model_df = merged_df.drop(merged_df.select_dtypes(include=['datetime64[ns]', 'datetime64[ns, EET]', "object"]).columns, axis=1)
+
+    drop_columns = [
+    'hours_ahead_forecast_weather',
+    'row_id',
+    'prediction_unit_id',
+    'longitude_hist_weather',
+    'longitude_forecast_weather',
+    'latitude_hist_weather',
+    'latitude_forecast_weather',
+    'data_block_id'
+    ] + col_list
+    
+    model_df.drop(drop_columns, axis=1, inplace=True)
+
+    # drop na from target
+    model_df.dropna(subset=['target'], inplace=True)    
+
+    return model_df
