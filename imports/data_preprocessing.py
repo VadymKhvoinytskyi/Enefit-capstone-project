@@ -121,6 +121,10 @@ def merge_data(data, client, historical_weather,
     merge_on_right = ['forecast_datetime', 'county'] + merge_parameter
     merged_df = pd.merge(merged_df, merged_forecast_weather, left_on=merge_on_left, right_on=merge_on_right, how='left')
 
+    
+    # split datetime into meaningful features of int types
+    merged_df = split_datetime(merged_df)
+    
     # mapping days of the week names and converting to categorical variable  ----- not working!!!!!???
     if 'day_of_week' in merged_df.columns:
         weekday_map = {
@@ -138,11 +142,7 @@ def merge_data(data, client, historical_weather,
     merged_df['county'] = merged_df['county'].astype('category')
     merged_df['product_type'] = merged_df['product_type'].astype('category')
 
-    # convert the time_of_day into int
-    #merged_df["time_of_day"] = merged_df["time_of_day"].apply(lambda x: int(x.strftime("%H")))
-
-    # split datetime into meaningful features of int types
-    merged_df = split_datetime(merged_df)
+    merged_df['hour'] = merged_df['hour'].astype('category')
 
     return merged_df
 
