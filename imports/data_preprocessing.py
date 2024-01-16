@@ -132,7 +132,8 @@ def merge_data(data, client, historical_weather,
             5: 'Saturday',
             6: 'Sunday'
         }
-        merged_df['day_of_week'] = merged_df['day_of_week'].map(weekday_map).astype('category')
+        merged_df['day_of_week'] = merged_df['day_of_week'].map(weekday_map)
+    merged_df['day_of_week'] = merged_df['day_of_week'].astype('category')
     
     # encode categories to category datetype
     merged_df['county'] = merged_df['county'].astype('category')
