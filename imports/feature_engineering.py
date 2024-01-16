@@ -17,7 +17,6 @@ def add_capacity_col(merged_df):
     return merged_df
 
 def basic_improvements(df):
-    copy()
 
     # Tryouts that dit not improve the results
     # dropping is_business: WORSE results
@@ -34,13 +33,13 @@ def basic_improvements(df):
     # STEP 2: Improvment
     # Create a new column as the sum of the two columns representing cloud cover: better MAE for train
     # (but MAE train/test difference slightly larger)
-    df['sum_column'] = df_exp['cloudcover_total_hist_weather'] * df_exp['diffuse_radiation_hist_weather']
+    df['sum_column'] = df['cloudcover_total_hist_weather'] * df['diffuse_radiation_hist_weather']
     # Drop the original columns
     df.drop(['cloudcover_total_hist_weather', 'diffuse_radiation_hist_weather'], axis=1, inplace=True)
 
     # STEP 3: Improvement
     # Create a new column as the product of temperature_forecast_weather and dewpoint_forecast_weather
-    df['temp_dew'] = df_exp['temperature_forecast_weather'] * df_exp['dewpoint_forecast_weather']
+    df['temp_dew'] = df['temperature_forecast_weather'] * df['dewpoint_forecast_weather']
     # Drop the original columns
     df.drop(['temperature_forecast_weather', 'dewpoint_forecast_weather'], axis=1, inplace=True)
 
