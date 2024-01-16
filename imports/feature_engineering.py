@@ -45,3 +45,94 @@ def basic_improvements(df):
     df.drop(['temperature_forecast_weather', 'dewpoint_forecast_weather'], axis=1, inplace=True)
 
     return df
+
+
+def add_public_holiday_col(merged_df):
+    import requests
+
+    # Set URL as url
+    url = 'https://openholidaysapi.org/PublicHolidays?' # for public holidays
+
+    parameters = {
+        'countryIsoCode': 'EE', # not EST, thanks google.....
+        'languageIsoCode': 'EN',
+        'validFrom': '2021-09-01',
+        'validTo': '2023-05-31'
+    }
+    # in terminal:
+    #url = curl -X GET 'https://openholidaysapi.org/PublicHolidays?countryIsoCode=EST&languageIsoCode=EN&validFrom=2021-09-01&validTo=2023-05-31' -H 'accept: text/json' 
+
+    # get request
+    r = requests.get(url, parameters)
+
+    # unpack nested json (name is nested)
+    ee_holidays = pd.json_normalize(r.json(), sep='_',
+                                    record_path='name',
+                                    record_prefix='name_',
+                                    meta=['id',
+                                        'startDate', 'endDate',
+                                        'type', 'nationwide'])
+
+    # convert dates to datetimes
+    ee_holidays['startDate'] = pd.to_datetime(ee_holidays['startDate'])
+    ee_holidays['endDate'] = pd.to_datetime(ee_holidays['endDate'])
+
+    # add datetime column to merged_df 
+    merged_df['dateTime'] = pd.to_datetime(merged_df['year'].astype(str) + merged_df['day_of_year'].astype(str), format='%Y%j')
+
+    # Check if dateTime appears in the range of startDate and endDate in ee_holidays
+    # and add new is_public_holiday column
+    merged_df['is_public_holiday'] = merged_df['dateTime'].between(ee_holidays['startDate'].min(), ee_holidays['endDate'].max()) & \
+        merged_df['dateTime'].isin(ee_holidays['startDate']) | merged_df['dateTime'].isin(ee_holidays['endDate'])
+
+    # remove dateTime column again
+    merged_df.drop(columns='dateTime', axis=1, inplace=True)
+
+    return merged_df
+
+
+
+def add_school_holiday_col(merged_df):
+    # doesn't recognize holidays between start and end date?
+    import requests
+
+    # Set URL as url
+    url = 'https://openholidaysapi.org/SchoolHolidays?' # for public holidays
+
+    parameters = {
+        'countryIsoCode': 'EE', # not EST, thanks google.....
+        'languageIsoCode': 'EN',
+        'validFrom': '2021-09-01',
+        'validTo': '2023-05-31'
+    }
+    # in terminal:
+    #url = curl -X GET 'https://openholidaysapi.org/SchoolHolidays?countryIsoCode=EST&languageIsoCode=EN&validFrom=2021-09-01&validTo=2023-05-31' -H 'accept: text/json' 
+
+    # get request
+    r = requests.get(url, parameters)
+
+    # unpack nested json (name is nested)
+    ee_holidays = pd.json_normalize(r.json(), sep='_',
+                                    record_path='name',
+                                    record_prefix='name_',
+                                    meta=['id',
+                                        'startDate', 'endDate',
+                                        'type', 'nationwide'])
+
+    # convert dates to datetimes
+    ee_holidays['startDate'] = pd.to_datetime(ee_holidays['startDate'])
+    ee_holidays['endDate'] = pd.to_datetime(ee_holidays['endDate'])
+
+    # add datetime column to merged_df 
+    merged_df['dateTime'] = pd.to_datetime(merged_df['year'].astype(str) + merged_df['day_of_year'].astype(str), format='%Y%j')
+
+    # Check if dateTime appears in the range of startDate and endDate in ee_holidays
+    # and add new is_public_holiday column
+    merged_df['is_school_holiday'] = merged_df['dateTime'].between(ee_holidays['startDate'].min(), ee_holidays['endDate'].max()) & \
+        merged_df['dateTime'].isin(ee_holidays['startDate']) | merged_df['dateTime'].isin(ee_holidays['endDate'])
+
+    # remove dateTime column again
+    merged_df.drop(columns='dateTime', axis=1, inplace=True)
+
+    return merged_df
+
