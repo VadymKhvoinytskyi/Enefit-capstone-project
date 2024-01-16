@@ -131,6 +131,10 @@ def merge_data(data, client, historical_weather,
     # split datetime into meaningful features of int types
     merged_df = split_datetime(merged_df)
 
+    
+    # split datetime into meaningful features of int types
+    merged_df = split_datetime(merged_df)
+    
     # mapping days of the week names and converting to categorical variable  ----- not working!!!!!???
     if 'day_of_week' in merged_df.columns:
         weekday_map = {
