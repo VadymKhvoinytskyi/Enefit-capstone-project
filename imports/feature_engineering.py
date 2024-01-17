@@ -135,3 +135,19 @@ def add_school_holiday_col(merged_df):
 
     return merged_df
 
+
+def add_shifted_target(df:pd.DataFrame)->pd.DataFrame:
+    # reintroduce the datetime column for merging
+    df['datetime'] = pd.to_datetime(df[['year', 'month', 'day_of_month', 'hour']].rename(columns={'day_of_month' : 'day'}),format='%Y:%m:%d:%h')
+    # make copy of the needed columns
+    shifted_df = df[['county', 'is_business', 'product_type', 'is_consumption','datetime', 'target']].copy()
+    # rename the target as shifted_target - that is the new column we want to add
+    shifted_df.rename(columns={'target' : 'shifted_target'}, inplace=True)
+    # shift the datetime by two days for our helper df
+    shifted_df["datetime"] = shifted_df["datetime"] + pd.Timedelta(2, unit="days")
+    # merge the shifted df to our original df - match the target of today to the day two days ahead 
+    df = pd.merge(df, shifted_df, on= ['county', 'is_business', 'product_type', 'is_consumption','datetime'], how='left')
+    # drop the datetime column again
+    df.drop("datetime", axis=1, inplace=True)
+    return df
+
